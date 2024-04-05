@@ -1,5 +1,3 @@
-import ComplaintModel from "../models/complaintModel";
-import jwtModel from "../models/jwtTokenModel";
 import loginModel from "../models/loginModel";
 
 const bcrypt=require("bcryptjs")
@@ -39,14 +37,22 @@ export const userprofile = async(req,res)=>{
     console.log(result)
     res.json(result)
 }
-
-export const useredit=async(req:any,res:any)=>{
-    // const userId=req.user.id
-    // const updatedData=req.body
-    // await loginModel.findByIdAndUpdate(userId,updatedData)
-    // res.status(200).json({
-    //     message:"User profile updated successfully"
-    // })
+export const useredit = async (req: any, res: any) => {
+    // const userId = req.params.id;
+    // if (!userId) {
+    //     return res.status(400).json({ error: "User ID is missing from request parameters" });
+    // }
+    // const updates = req.body;
+    // const user = await loginModel.findById(req.user._id);
+    // if (!user) {
+    //     return res.status(404).json({ error: "User not found" });
+    // }
+    // // Update user fields
+    // Object.keys(updates).forEach(key => {
+    //     user[key] = updates[key];
+    // });
+    // await user.save();
+    // res.status(200).json({ message: "User profile updated successfully" });
 }
 
 export const viewusers= async(req,res)=>{

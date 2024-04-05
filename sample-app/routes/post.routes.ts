@@ -13,6 +13,6 @@ router.post('/date',adddate)
 router.post('/addcom',addcom)
 router.get('/viewcom',viewcom)
 router.get('/viewdate',viewdate)
-router.get('/approvedate',approvedate)
+router.post('/approvedate',approvedate)
 
 export default router;

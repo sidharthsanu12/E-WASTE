@@ -2,6 +2,7 @@ import { json } from "body-parser";
 import ComplaintModel from "../models/complaintModel";
 import DateModel from "../models/dateModel";
 import PostModel from "../models/postModel";
+import ApproveDateModel from "../models/approveDateModel";
 
 export const post = async(req,res)=>{
     let data = req.body
@@ -11,7 +12,6 @@ export const post = async(req,res)=>{
         status:"success"
     })
 }
-
 export const view = async(req,res)=>{
     let input = req.body
     let result = await PostModel.find(input)
@@ -57,5 +57,11 @@ export const viewdate = async(req,res)=>{
     res.json(data)
 }
 export const approvedate= async(req,res)=>{
-    let {userId,date} =req.body
-}
+    let data = req.body
+    let result = new ApproveDateModel({
+        userId:req?.user?.id,
+        date : req.body.date
+    }).save()
+    res.json({
+        status:"success"
+    })}

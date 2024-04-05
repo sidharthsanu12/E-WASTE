@@ -6,7 +6,7 @@ import {adminsignup} from '../services/signin.services'
 import {userprofile} from '../services/login.service'
 import {useredit} from '../services/login.service'
 import verifyToken from "../helpers/jwt";
-
+ 
 const router = Router()
 
 router.post('/add',login)
